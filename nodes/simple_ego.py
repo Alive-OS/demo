@@ -30,7 +30,7 @@ class EgoSimple(EgoNode):
     def main(self):
         n = 0
         while (1):
-            self.to_will("something")
+            self.send_cmd("something")
             n += 1
             if n % 5:
                 self.write_to_emotion_core(param="serotonin", value=100, change_per_sec=20)

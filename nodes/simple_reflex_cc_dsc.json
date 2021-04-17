@@ -9,14 +9,19 @@
                     "device_name": "simple_device",
                     "command": "move",
                     "arguments": [
-                        "forward",
-                        "100ms"
+                        "left",
+                        "0.1"
                     ]
                 },
                 {
                     "device_name": "simple_device",
-                    "command": "stop"
+                    "command": "move",
+                    "arguments": [
+                        "right",
+                        "0.1"
+                    ]
                 }
             ]
-        }    ]
+        }
+    ]
 }

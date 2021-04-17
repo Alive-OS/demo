@@ -10,7 +10,14 @@
                     "command": "move",
                     "arguments": [
                         "forward",
-                        "100ms"
+                        "1"
+                    ]
+                },
+                {
+                    "device_name": "simple_device",
+                    "command": "wait",
+                    "arguments": [
+                        "2"
                     ]
                 },
                 {

@@ -24,6 +24,7 @@ from aliveos_hw.abstract_device import AbstractDevice
 import os
 from time import sleep
 from random import randrange
+from rospy import logwarn, logerr
 
 
 class SimpleDevice(AbstractDevice):
@@ -31,6 +32,32 @@ class SimpleDevice(AbstractDevice):
         while (1):
             self.publish_device_data(data_value=randrange(-100, 100, 1))
             sleep(1)
+
+    def command_move(self, arg_list):
+        logwarn("command_move")
+        duration = None
+        for a in arg_list:
+            try:
+                duration = int(a)
+                break
+            except ValueError:
+                pass
+
+        if "left" in arg_list:
+            logwarn("Move left")
+        elif "right" in arg_list:
+            logwarn("Move right")
+        elif "forward" in arg_list:
+            logwarn("Move forward")
+        elif "backward" in arg_list:
+            logwarn("Move backward")
+        else:
+            logerr("Move command has no direction: left, right, forward or backward")
+            return
+
+        if duration:
+            logwarn(f"Wait for {duration} sec")
+            logwarn("Stop")
 
 
 d = SimpleDevice(
