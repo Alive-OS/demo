@@ -1,6 +1,6 @@
 {
     "$schema": "/home/agramakov/Files/Code/zakharos_core/src/aliveos_msgs/json/command-concept-dsc.json",
-    "name": "simple_instinct_conept",
+    "name": "simple_instinct_panic",
     "descriptor": [
         {
             "modifier": "",
@@ -9,8 +9,14 @@
                     "device_name": "simple_device",
                     "command": "move",
                     "arguments": [
-                        "forward",
-                        "100ms"
+                        "backward"
+                    ]
+                },
+                {
+                    "device_name": "simple_device",
+                    "command": "wait",
+                    "arguments": [
+                        "3"
                     ]
                 },
                 {

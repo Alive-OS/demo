@@ -23,12 +23,12 @@
 
 from aliveos_app import ReflexNode
 from os.path import dirname
-from rospy import logwarn
 
 
 class ReflexSimple(ReflexNode):
-    def perceprion_callback(self, symbol, modifier):
-        logwarn(f"{symbol}:{modifier}")
+    def callback_perception_concept(self, symbol, modifier):
+        if symbol == "simple_reflex_shiver":
+            self.send_cmd("simple_reflex_shiver")
 
 
 node = ReflexSimple("simple_reflex", [f"{dirname(__file__)}/simple_reflex_cc_dsc.json"])
