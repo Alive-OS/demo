@@ -12,11 +12,7 @@
     <node name="simple_robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model simple_robot" />
 
     <!-- AliveOS -->
-    <include file="$(find aliveos_launch)/launch/init.launch" />
-    <param name="emotion_core_enable" type="bool" value="true" />
-    <node name="aliveos_emotion_core" pkg="aliveos_middle" type="aliveos_emotion_core_node" />
-    <node name="concept2commands_interpreter" pkg="aliveos_middle" type="concept2commands_interpreter.py" />
-    <node name="data2concept_interpreter" pkg="aliveos_middle" type="data2concept_interpreter.py" />
+    <include file="$(find aliveos_launch)/launch/aliveos.launch" />
 
     <!-- Simple robot -->
     <node name="simple_device" pkg="aliveos_demo" type="simple_device.py" />
