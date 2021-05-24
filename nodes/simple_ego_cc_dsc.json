@@ -1,6 +1,6 @@
 {
     "$schema": "/home/agramakov/Files/Code/zakharos_core/src/aliveos_msgs/json/command-concept-dsc.json",
-    "name": "something",
+    "name": "step",
     "descriptor": [
         {
             "modifier": "",
@@ -9,8 +9,28 @@
                     "device_name": "simple_device",
                     "command": "move",
                     "arguments": [
-                        "forward",
-                        "100ms"
+                        "forward"
+                    ]
+                },
+                {
+                    "device_name": "simple_device",
+                    "command": "wait",
+                    "arguments": [
+                        "0.3"
+                    ]
+                },
+                {
+                    "device_name": "simple_device",
+                    "command": "move",
+                    "arguments": [
+                        "left"
+                    ]
+                },
+                {
+                    "device_name": "simple_device",
+                    "command": "wait",
+                    "arguments": [
+                        "0.3"
                     ]
                 },
                 {

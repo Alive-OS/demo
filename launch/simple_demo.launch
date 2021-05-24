@@ -1,0 +1,23 @@
+<launch>
+
+    <!-- Simulation -->
+    <arg name="world" default="empty" />
+    <arg name="paused" default="false" />
+    <arg name="use_sim_time" default="true" />
+    <arg name="gui" default="true" />
+    <arg name="headless" default="false" />
+    <arg name="debug" default="false" />
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+    <param name="robot_description" command="$(find xacro)/xacro '$(find aliveos_demo)/urdf/simple_robot.xacro'" />
+    <node name="simple_robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model simple_robot" />
+
+    <!-- AliveOS -->
+    <include file="$(find aliveos_launch)/launch/aliveos.launch" />
+
+    <!-- Simple robot -->
+    <node name="simple_device" pkg="aliveos_demo" type="simple_device.py" />
+    <node name="simple_ego" pkg="aliveos_demo" type="simple_ego.py" />
+    <node name="simple_instinct" pkg="aliveos_demo" type="simple_instinct.py" />
+    <node name="simple_reflex" pkg="aliveos_demo" type="simple_reflex.py" />
+
+</launch>

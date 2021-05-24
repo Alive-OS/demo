@@ -21,20 +21,21 @@
 #
 # *************************************************************************
 
-from time import sleep
 from aliveos_app import EgoNode
 from os.path import dirname
+from rospy import loginfo
 
 
 class EgoSimple(EgoNode):
     def main(self):
         n = 0
         while (1):
-            self.to_will("something")
+            loginfo(f"Main: {n}")
+            self.send_cmd("step")
             n += 1
             if n % 5:
                 self.write_to_emotion_core(param="serotonin", value=100, change_per_sec=20)
-            sleep(1)
+            self.wait(1)
 
 
 node = EgoSimple("ego_simple", concept_files=[f"{dirname(__file__)}/simple_ego_cc_dsc.json"])

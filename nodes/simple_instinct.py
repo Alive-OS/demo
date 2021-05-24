@@ -27,8 +27,10 @@ from rospy import logwarn
 
 
 class InstinctSimple(InstinctNode):
-    def perceprion_callback(self, symbol, modifier):
-        logwarn(f"{symbol}:{modifier}")
+    def callback_perception_concept(self, symbol, modifier):
+        if symbol == "simple_instinct_panic":
+            logwarn(f"d2c -> instinct: {symbol}:{modifier}")
+            self.send_cmd("simple_instinct_panic")
 
 
 node = InstinctSimple("simple_instinct", [f"{dirname(__file__)}/simple_instinct_cc_dsc.json"])

@@ -21,6 +21,14 @@
                 {
                     "concept": "temperature_bloody_hell",
                     "conditions": [ { "condition": "GREATER_THAN", "threshold": 1000000 } ]
+                },
+                {
+                    "concept": "simple_reflex_shiver",
+                    "conditions": [ { "condition": "EQUAL", "threshold": 101 }]
+                },
+                {
+                    "concept": "simple_instinct_panic",
+                    "conditions": [ { "condition": "EQUAL", "threshold": 102 }]
                 }
             ]
         }
